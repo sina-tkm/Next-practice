@@ -1,9 +1,6 @@
-import React from 'react'
+import React from "react";
 
-function page() {
-  return (
-    <div>page</div>
-  )
+function Page() {
+  return <h1>hello world!</h1>;
 }
-
-export default page
+export default Page;
