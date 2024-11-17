@@ -1,6 +1,15 @@
+import { notFound } from "next/navigation";
+
 export default async function ProductDetail({ params }) {
-  const { productId } = await params; // Await the params object
-  console.log(productId); // Now you should get the actual productId
-  
-  return <div>Product ID page: {productId}</div>;
+  // Awaiting the params object
+  const { productId } = await params;
+
+  const productIdParsed = parseInt(productId);
+
+  // Checking if the productId exceeds the limit
+  if (productIdParsed > 10) {
+    notFound(); // Handle 404 condition
+  }
+
+  return <div>Product ID page: {productIdParsed}</div>;
 }
